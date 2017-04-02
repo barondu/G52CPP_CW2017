@@ -1,34 +1,8 @@
-﻿Build started 01/04/2017 23:00:22.
+﻿Build started 02/04/2017 15:47:17.
      1>Project "H:\CPP_CW2016\CPP_CW2016\src\CourseworkBase.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\SDL\include /ZI /nologo /W1 /WX- /Od /Oy- /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"H:\CPP_CW2016\CPP_CW2016\/Debug\\" /Fd"H:\CPP_CW2016\CPP_CW2016\/Debug\vc120.pdb" /FR"H:\CPP_CW2016\CPP_CW2016\/Debug\\" /Gd /TP /analyze- /errorReport:prompt Enemy.cpp mainfunction.cpp BaseEngine.cpp DisplayableObject.cpp FontManager.cpp JPGImage.cpp Psybd1Engine.cpp Psybd1TileManager.cpp Role.cpp SimpleDemo.cpp TileManager.cpp BouncingBall.cpp BouncingBallMain.cpp Demo1Main.cpp Demo2Main.cpp Demo2Object.cpp Demo2TileManager.cpp Demo3Main.cpp Demo3Object.cpp Demo3ObjectFinished.cpp Demo3TileManager.cpp Demo4Main.cpp Demo4Object.cpp Demo4TileManager.cpp
-         Enemy.cpp
-         mainfunction.cpp
-         BaseEngine.cpp
-         DisplayableObject.cpp
-         FontManager.cpp
-         JPGImage.cpp
-         Psybd1Engine.cpp
-         Psybd1TileManager.cpp
-         Role.cpp
-         SimpleDemo.cpp
-         TileManager.cpp
-         BouncingBall.cpp
-         BouncingBallMain.cpp
-         Demo1Main.cpp
-         Demo2Main.cpp
-         Demo2Object.cpp
-         Demo2TileManager.cpp
-         Demo3Main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\SDL\include /ZI /nologo /W1 /WX- /Od /Oy- /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"H:\CPP_CW2016\CPP_CW2016\/Debug\\" /Fd"H:\CPP_CW2016\CPP_CW2016\/Debug\vc120.pdb" /FR"H:\CPP_CW2016\CPP_CW2016\/Debug\\" /Gd /TP /analyze- /errorReport:prompt Demo3Object.cpp
          Demo3Object.cpp
-         Demo3ObjectFinished.cpp
-         Generating Code...
-         Compiling...
-         Demo3TileManager.cpp
-         Demo4Main.cpp
-         Demo4Object.cpp
-         Demo4TileManager.cpp
-         Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"H:\CPP_CW2016\CPP_CW2016\/Debug\CourseworkBase.exe" /NOLOGO /LIBPATH:..\SDL\libx86 SDL2.lib SDL2main.lib SDL2_image.lib SDL2_ttf.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"H:\CPP_CW2016\CPP_CW2016\/Debug\CourseworkBase.pdb" /MAP:"map" /SUBSYSTEM:CONSOLE /TLBID:1 /ENTRY:"mainCRTStartup" /DYNAMICBASE:NO /IMPLIB:"H:\CPP_CW2016\CPP_CW2016\/Debug\CourseworkBase.lib" /MACHINE:X86 /SAFESEH H:\CPP_CW2016\CPP_CW2016\/Debug\Enemy.obj
          H:\CPP_CW2016\CPP_CW2016\/Debug\mainfunction.obj
@@ -54,12 +28,9 @@
          H:\CPP_CW2016\CPP_CW2016\/Debug\Demo4Main.obj
          H:\CPP_CW2016\CPP_CW2016\/Debug\Demo4Object.obj
          H:\CPP_CW2016\CPP_CW2016\/Debug\Demo4TileManager.obj
-     1>Enemy.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
          CourseworkBase.vcxproj -> H:\CPP_CW2016\CPP_CW2016\/Debug\CourseworkBase.exe
-       BscMake:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"H:\CPP_CW2016\CPP_CW2016\/Debug\CourseworkBase.bsc" H:\CPP_CW2016\CPP_CW2016\/Debug\Enemy.sbr H:\CPP_CW2016\CPP_CW2016\/Debug\mainfunction.sbr H:\CPP_CW2016\CPP_CW2016\/Debug\BaseEngine.sbr H:\CPP_CW2016\CPP_CW2016\/Debug\DisplayableObject.sbr H:\CPP_CW2016\CPP_CW2016\/Debug\FontManager.sbr H:\CPP_CW2016\CPP_CW2016\/Debug\JPGImage.sbr H:\CPP_CW2016\CPP_CW2016\/Debug\Psybd1Engine.sbr H:\CPP_CW2016\CPP_CW2016\/Debug\Psybd1TileManager.sbr H:\CPP_CW2016\CPP_CW2016\/Debug\Role.sbr H:\CPP_CW2016\CPP_CW2016\/Debug\SimpleDemo.sbr H:\CPP_CW2016\CPP_CW2016\/Debug\TileManager.sbr H:\CPP_CW2016\CPP_CW2016\/Debug\BouncingBall.sbr H:\CPP_CW2016\CPP_CW2016\/Debug\BouncingBallMain.sbr H:\CPP_CW2016\CPP_CW2016\/Debug\Demo1Main.sbr H:\CPP_CW2016\CPP_CW2016\/Debug\Demo2Main.sbr H:\CPP_CW2016\CPP_CW2016\/Debug\Demo2Object.sbr H:\CPP_CW2016\CPP_CW2016\/Debug\Demo2TileManager.sbr H:\CPP_CW2016\CPP_CW2016\/Debug\Demo3Main.sbr H:\CPP_CW2016\CPP_CW2016\/Debug\Demo3Object.sbr H:\CPP_CW2016\CPP_CW2016\/Debug\Demo3ObjectFinished.sbr H:\CPP_CW2016\CPP_CW2016\/Debug\Demo3TileManager.sbr H:\CPP_CW2016\CPP_CW2016\/Debug\Demo4Main.sbr H:\CPP_CW2016\CPP_CW2016\/Debug\Demo4Object.sbr H:\CPP_CW2016\CPP_CW2016\/Debug\Demo4TileManager.sbr
      1>Done Building Project "H:\CPP_CW2016\CPP_CW2016\src\CourseworkBase.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:58.03
+Time Elapsed 00:00:07.95

@@ -1,6 +1,6 @@
  CourseworkBase
 
- Timestamp is 58e0232c (Sat Apr 01 23:01:16 2017)
+ Timestamp is 58e10efd (Sun Apr 02 15:47:25 2017)
 
  Preferred load address is 00400000
 
@@ -72,8 +72,8 @@
  0001:000025c0       ??$Swap@N@@YAXAAN0@Z       004035c0 f i BaseEngine.obj
  0001:00002610       ??0BaseEngine@@QAE@H@Z     00403610 f   BaseEngine.obj
  0001:00002720       ??1BaseEngine@@UAE@XZ      00403720 f   BaseEngine.obj
- 0001:000027a0       ??_EBaseEngine@@UAEPAXI@Z  004037a0 f i BaseEngine.obj
  0001:000027a0       ??_GBaseEngine@@UAEPAXI@Z  004037a0 f i BaseEngine.obj
+ 0001:000027a0       ??_EBaseEngine@@UAEPAXI@Z  004037a0 f i BaseEngine.obj
  0001:000027f0       ?CleanUp@BaseEngine@@UAEXXZ 004037f0 f   BaseEngine.obj
  0001:00002810       ?CopyAllBackgroundBuffer@BaseEngine@@QAEXXZ 00403810 f   BaseEngine.obj
  0001:00002870       ?CopyBackgroundPixels@BaseEngine@@QAEXHHHH@Z 00403870 f   BaseEngine.obj
@@ -85,6 +85,7 @@
  0001:00002ff0       ?DrawObjects@BaseEngine@@UAEXXZ 00403ff0 f   BaseEngine.obj
  0001:00003080       ?DrawOval@BaseEngine@@QAEXHHHHIPAUSDL_Surface@@@Z 00404080 f   BaseEngine.obj
  0001:00003250       ?DrawPolygon@BaseEngine@@QAEXHPAN0IPAUSDL_Surface@@@Z 00404250 f   BaseEngine.obj
+ 0001:00003a50       ?Draw@Demo3Object@@UAEXXZ  00404a50 f   Demo3Object.obj
  0001:00003c50       ?DrawRectangle@BaseEngine@@QAEXHHHHIPAUSDL_Surface@@@Z 00404c50 f   BaseEngine.obj
  0001:00003d20       ?DrawShortenedArrow@BaseEngine@@QAEXHHHHHHIHHPAUSDL_Surface@@@Z 00404d20 f   BaseEngine.obj
  0001:00004390       ?DrawShortenedLine@BaseEngine@@QAEXHHHHHHIHPAUSDL_Surface@@@Z 00405390 f   BaseEngine.obj
@@ -197,8 +198,8 @@
  0001:0000a130       ?Jump@Role@@QAEXXZ         0040b130 f   Role.obj
  0001:0000a200       ??0SimpleShape@@QAE@PAVSimpleDemo@@@Z 0040b200 f i SimpleDemo.obj
  0001:0000a350       ??1SimpleShape@@UAE@XZ     0040b350 f i SimpleDemo.obj
- 0001:0000a380       ??_ESimpleShape@@UAEPAXI@Z 0040b380 f i SimpleDemo.obj
  0001:0000a380       ??_GSimpleShape@@UAEPAXI@Z 0040b380 f i SimpleDemo.obj
+ 0001:0000a380       ??_ESimpleShape@@UAEPAXI@Z 0040b380 f i SimpleDemo.obj
  0001:0000a3d0       ?DoUpdate@SimpleShape@@UAEXH@Z 0040b3d0 f i SimpleDemo.obj
  0001:0000a850       ?Draw@SimpleShape@@UAEXXZ  0040b850 f i SimpleDemo.obj
  0001:0000a900       ?DrawScreenRectangle@BaseEngine@@QAEXHHHHI@Z 0040b900 f i SimpleDemo.obj
@@ -222,10 +223,10 @@
  0001:0000b560       ??1BouncingBall1@@UAE@XZ   0040c560 f i BouncingBall.obj
  0001:0000b590       ??1BouncingBall2@@UAE@XZ   0040c590 f i BouncingBall.obj
  0001:0000b5c0       ??1BouncingBall@@UAE@XZ    0040c5c0 f   BouncingBall.obj
- 0001:0000b5f0       ??_EBouncingBall1@@UAEPAXI@Z 0040c5f0 f i BouncingBall.obj
  0001:0000b5f0       ??_GBouncingBall1@@UAEPAXI@Z 0040c5f0 f i BouncingBall.obj
- 0001:0000b640       ??_GBouncingBall2@@UAEPAXI@Z 0040c640 f i BouncingBall.obj
+ 0001:0000b5f0       ??_EBouncingBall1@@UAEPAXI@Z 0040c5f0 f i BouncingBall.obj
  0001:0000b640       ??_EBouncingBall2@@UAEPAXI@Z 0040c640 f i BouncingBall.obj
+ 0001:0000b640       ??_GBouncingBall2@@UAEPAXI@Z 0040c640 f i BouncingBall.obj
  0001:0000b690       ??_GBouncingBall@@UAEPAXI@Z 0040c690 f i BouncingBall.obj
  0001:0000b690       ??_EBouncingBall@@UAEPAXI@Z 0040c690 f i BouncingBall.obj
  0001:0000b6e0       ?Calculate@MovementPosition@@QAEXH@Z 0040c6e0 f i BouncingBall.obj
@@ -265,8 +266,8 @@
  0001:0000d770       ?SetupBackgroundBuffer@Demo1Main@@UAEXXZ 0040e770 f   Demo1Main.obj
  0001:0000d7a0       ??0Demo2Main@@QAE@XZ       0040e7a0 f   Demo2Main.obj
  0001:0000d830       ??1Demo2Main@@UAE@XZ       0040e830 f   Demo2Main.obj
- 0001:0000d8b0       ??_GDemo2Main@@UAEPAXI@Z   0040e8b0 f i Demo2Main.obj
  0001:0000d8b0       ??_EDemo2Main@@UAEPAXI@Z   0040e8b0 f i Demo2Main.obj
+ 0001:0000d8b0       ??_GDemo2Main@@UAEPAXI@Z   0040e8b0 f i Demo2Main.obj
  0001:0000d900       ?DrawStrings@Demo2Main@@UAEXXZ 0040e900 f   Demo2Main.obj
  0001:0000d960       ?GameAction@Demo2Main@@UAEXXZ 0040e960 f   Demo2Main.obj
  0001:0000d9c0       ?InitialiseObjects@Demo2Main@@UAEHXZ 0040e9c0 f   Demo2Main.obj
@@ -299,14 +300,13 @@
  0001:0000e970       ??_EDemo3Object@@UAEPAXI@Z 0040f970 f i Demo3Object.obj
  0001:0000e970       ??_GDemo3Object@@UAEPAXI@Z 0040f970 f i Demo3Object.obj
  0001:0000e9c0       ?DoUpdate@Demo3Object@@UAEXH@Z 0040f9c0 f   Demo3Object.obj
- 0001:0000ec50       ?Draw@Demo3Object@@UAEXXZ  0040fc50 f   Demo3Object.obj
  0001:0000ece0       ?GetTileManager@Demo3Main@@QAEAAVDemo3TileManager@@XZ 0040fce0 f i Demo3Object.obj
  0001:0000ed00       ?GetXDiffForDirection@Demo3Object@@QAEHH@Z 0040fd00 f i Demo3Object.obj
  0001:0000ed80       ?GetYDiffForDirection@Demo3Object@@QAEHH@Z 0040fd80 f i Demo3Object.obj
  0001:0000ee00       ??0Demo3ObjectFinished@@QAE@PAVDemo3Main@@HH@Z 0040fe00 f   Demo3ObjectFinished.obj
  0001:0000ef40       ??1Demo3ObjectFinished@@UAE@XZ 0040ff40 f   Demo3ObjectFinished.obj
- 0001:0000ef70       ??_EDemo3ObjectFinished@@UAEPAXI@Z 0040ff70 f i Demo3ObjectFinished.obj
  0001:0000ef70       ??_GDemo3ObjectFinished@@UAEPAXI@Z 0040ff70 f i Demo3ObjectFinished.obj
+ 0001:0000ef70       ??_EDemo3ObjectFinished@@UAEPAXI@Z 0040ff70 f i Demo3ObjectFinished.obj
  0001:0000efc0       ?DoUpdate@Demo3ObjectFinished@@UAEXH@Z 0040ffc0 f   Demo3ObjectFinished.obj
  0001:0000f390       ?Draw@Demo3ObjectFinished@@UAEXXZ 00410390 f   Demo3ObjectFinished.obj
  0001:0000f470       ?GetXDiffForDirection@Demo3ObjectFinished@@QAEHH@Z 00410470 f i Demo3ObjectFinished.obj
@@ -316,8 +316,8 @@
  0001:0000f5e0       ?DrawTileAt@Demo3TileManager@@UBEXPAVBaseEngine@@PAUSDL_Surface@@HHHH@Z 004105e0 f   Demo3TileManager.obj
  0001:0000f7d0       ??0Demo4Main@@QAE@XZ       004107d0 f   Demo4Main.obj
  0001:0000f870       ??1Demo4Main@@UAE@XZ       00410870 f   Demo4Main.obj
- 0001:0000f8f0       ??_EDemo4Main@@UAEPAXI@Z   004108f0 f i Demo4Main.obj
  0001:0000f8f0       ??_GDemo4Main@@UAEPAXI@Z   004108f0 f i Demo4Main.obj
+ 0001:0000f8f0       ??_EDemo4Main@@UAEPAXI@Z   004108f0 f i Demo4Main.obj
  0001:0000f940       ?DrawObjects@Demo4Main@@UAEXXZ 00410940 f   Demo4Main.obj
  0001:0000f970       ?DrawStrings@Demo4Main@@UAEXXZ 00410970 f   Demo4Main.obj
  0001:0000fa80       ?GameAction@Demo4Main@@UAEXXZ 00410a80 f   Demo4Main.obj

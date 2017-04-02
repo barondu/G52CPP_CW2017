@@ -19,7 +19,7 @@ Role::Role(BaseEngine* pEngine)
 	// And make it visible
 
 	// Load image
-	m_oBaseSprite.LoadImage("idle.png");
+	m_oBaseSprite.LoadImage("idle1.png");
 	m_oIdleSprite;
 	m_oLeftRun1Sprite;
 	m_oRightRun1Sprite.LoadImage("run1.png");
