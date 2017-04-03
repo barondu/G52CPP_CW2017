@@ -21,9 +21,9 @@ void Psybd1Engine::SetupBackgroundBuffer()
 
 	// a--tile1.png b--tile2.png c--tile3.png
 	char* data[] = {
-		"aaaaaaaaaaaaaaaaaaaaaaaaaaa",
-		"bbbccbbbbcbbbcbcccbbccbbbcc",
-		"cbccccbbcccbcccbcccbcccbbcc",
+		"aaaaaaaaaddaaaaaaddaaddddaa",
+		"bbbccbbbbddbbcbcccbbcddddcc",
+		"cbccccbbcccbcccbcccbcddddcc",
 		"ccccccccccccccccccccccccccc"
 		 };
 
@@ -36,7 +36,7 @@ void Psybd1Engine::SetupBackgroundBuffer()
 
 
 	// Specify the screen x,y of top left corner
-	m_oTiles.SetBaseTilesPositionOnScreen(0, 528);
+	m_oTiles.SetBaseTilesPositionOnScreen(0, 540);
 
 	// Tell it to draw tiles from x1,y1 to x2,y2 in tile array,
 	// to the background of this screen

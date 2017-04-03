@@ -4,7 +4,7 @@
 #include "JPGImage.h"
 
 Psybd1TileManager::Psybd1TileManager()
-	: TileManager(48, 48)
+	: TileManager(60, 60)
 {
 	m_tFloor1.LoadImage("floor1.png");
 	m_tFloor2.LoadImage("floor2.png");
@@ -30,21 +30,21 @@ void Psybd1TileManager::DrawTileAt(
 			0, 0,
 			iStartPositionScreenX,
 			iStartPositionScreenY,
-			48, 48);
+			60, 60);
 		break;
 	case 1:
 		m_tFloor2.RenderImage(pEngine->GetBackground(),
 			0,0,
 			iStartPositionScreenX,
 			iStartPositionScreenY,
-			48,48);
+			60,60);
 		break;
 	case 2:
 		m_tFloor3.RenderImage(pEngine->GetBackground(),
 			0, 0,
 			iStartPositionScreenX,
 			iStartPositionScreenY,
-			48, 48);
+			60, 60);
 		break;
 	case 3:break;
 	case 4:break;

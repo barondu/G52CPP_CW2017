@@ -11,16 +11,15 @@ public:
 	void DoUpdate(int intiCurrentTime);
 	void Jump();
 	// Sprite
-	ImageData m_oBaseSprite;
-	ImageData m_oIdleSprite;
 	//ImageData m_oAttackSprite;
-	ImageData m_oLeftRun1Sprite;
-	ImageData m_oRightRun1Sprite;
-	ImageData m_oRightRun2Sprite;
-	ImageData m_oRightRun3Sprite;
-	ImageData m_oRightRun4Sprite;
-	ImageData m_oLeftMoveSprite;
+	ImageData m_oIdleSpriteR;
+	ImageData m_oIdleSpriteL;
 
+	ImageData m_oRunSpriteL[5];
+	ImageData m_oRunSpriteR[5];
+
+	ImageData m_oJumpSpriteL[2];
+	ImageData m_oJumpSpriteR[2];
 	
 protected:
 	int iRefreshRate = 0;
@@ -28,7 +27,12 @@ protected:
 	bool isGround = true;
 	bool canDoubleJump = false;
 
-	double m_dSpeedX = 4;
+	// 0 means left
+	// 1 means right
+
+	int m_iDir;
+
+	double m_dSpeedX = 3;
 	double m_dSpeedY = 0;
 	double m_dAccelerateX = 0.2;
 	// Because the drop speed is positive
