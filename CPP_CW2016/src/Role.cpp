@@ -1,6 +1,7 @@
 #include "header.h"
 #include "templates.h"
 #include "Role.h"
+#include "Psybd1Engine.h"
 #include "JPGImage.h"
 
 
@@ -205,6 +206,9 @@ void Role::DoUpdate(int intiCurrentTime)
 	if (!isGround)
 		m_dSpeedY -= m_dAccelerateY;
 
+	if (m_pTileManager->IsValidTilePosition(m_iCurrentScreenX, m_iCurrentScreenY))
+	{
+	}
 
 	if (m_iCurrentScreenX < m_iDrawWidth / 2)
 		m_iCurrentScreenX = m_iDrawWidth / 2;
