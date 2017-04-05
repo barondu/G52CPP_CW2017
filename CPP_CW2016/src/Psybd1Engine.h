@@ -30,10 +30,10 @@ public:
 
 
 	// Get a reference to the current tile manager
-	Psybd1TileManager& GetTileManager() { return m_oTiles; }
+	Psybd1TileManager& GetTileManager() { return *m_oTiles; }
 private:
-	Psybd1TileManager m_oTiles;
-	Role* protagonist = new Role(this);
+	Psybd1TileManager* m_oTiles = new Psybd1TileManager();
+	Role* protagonist = new Role(this, m_oTiles);
 	Enemy* enemy1 = new Enemy(this);
 };
 

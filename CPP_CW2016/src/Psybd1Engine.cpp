@@ -16,31 +16,39 @@ void Psybd1Engine::SetupBackgroundBuffer()
 {
 	FillBackground(0xe3f2fd);
 	//FillBackground(0xffffff);
-	int ground_Rows = 4;
-	int ground_Columns = 27;
+	int ground_Rows = 12;
+	int ground_Columns = 28;
 
 	// a--tile1.png b--tile2.png c--tile3.png
 	char* data[] = {
-		"aaaaaaaaaddaaaaaaddaaddddaa",
-		"bbbccbbbbddbbcbcccbbcddddcc",
-		"cbccccbbcccbcccbcccbcddddcc",
-		"ccccccccccccccccccccccccccc"
+		"dddddddddddddddddddddddddddd",
+		"dddddddddddddddddddddddddddd",
+		"dddddddddddddddddddddddddddd",
+		"dddddddddddddddddddddddddddd",
+		"dddddddddddddddddddddddddddd",
+		"ddaaaddddddddddddddddddddddd",
+		"dddddddddddddddddddddddddddd",
+		"dddddddddddddddddddddddddddd",
+		"aaaaaaaaadddaaaaaaddaaaaaaaa",
+		"bbbccbbbbddbbcbcccbbcccccccc",
+		"cbccccbbcccbbbcbcccbcccccccc",
+		"cccccccccccccccccccccccccccc"
 		 };
 
 	// Specify how many tiles wide and high
-	m_oTiles.SetSize(ground_Columns, ground_Rows);
+	m_oTiles->SetSize(ground_Columns, ground_Rows);
 	// Set up the tiles
 	for (int x = 0; x < ground_Columns; x++)
 		for (int y = 0; y < ground_Rows; y++)
-			m_oTiles.SetValue(x, y, data[y][x]-'a');
+			m_oTiles->SetValue(x, y, data[y][x]-'a');
 
 
 	// Specify the screen x,y of top left corner
-	m_oTiles.SetBaseTilesPositionOnScreen(0, 540);
+	m_oTiles->SetBaseTilesPositionOnScreen(0, 0);
 
 	// Tell it to draw tiles from x1,y1 to x2,y2 in tile array,
 	// to the background of this screen
-	m_oTiles.DrawAllTiles(this,
+	m_oTiles->DrawAllTiles(this,
 		this->GetBackground(),
 		0, 0, ground_Columns - 1, ground_Rows- 1);
 }

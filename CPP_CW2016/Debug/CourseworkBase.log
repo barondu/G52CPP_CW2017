@@ -1,8 +1,8 @@
-﻿Build started 04/04/2017 12:31:58.
+﻿Build started 04/04/2017 19:34:37.
      1>Project "H:\CPP_CW2016\CPP_CW2016\src\CourseworkBase.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\SDL\include /ZI /nologo /W1 /WX- /Od /Oy- /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"H:\CPP_CW2016\CPP_CW2016\/Debug\\" /Fd"H:\CPP_CW2016\CPP_CW2016\/Debug\vc120.pdb" /FR"H:\CPP_CW2016\CPP_CW2016\/Debug\\" /Gd /TP /analyze- /errorReport:prompt mainfunction.cpp
-         mainfunction.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\SDL\include /ZI /nologo /W1 /WX- /Od /Oy- /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"H:\CPP_CW2016\CPP_CW2016\/Debug\\" /Fd"H:\CPP_CW2016\CPP_CW2016\/Debug\vc120.pdb" /FR"H:\CPP_CW2016\CPP_CW2016\/Debug\\" /Gd /TP /analyze- /errorReport:prompt Psybd1Engine.cpp
+         Psybd1Engine.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"H:\CPP_CW2016\CPP_CW2016\/Debug\CourseworkBase.exe" /NOLOGO /LIBPATH:..\SDL\libx86 SDL2.lib SDL2main.lib SDL2_image.lib SDL2_ttf.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"H:\CPP_CW2016\CPP_CW2016\/Debug\CourseworkBase.pdb" /MAP:"map" /SUBSYSTEM:CONSOLE /TLBID:1 /ENTRY:"mainCRTStartup" /DYNAMICBASE:NO /IMPLIB:"H:\CPP_CW2016\CPP_CW2016\/Debug\CourseworkBase.lib" /MACHINE:X86 /SAFESEH H:\CPP_CW2016\CPP_CW2016\/Debug\Enemy.obj
          H:\CPP_CW2016\CPP_CW2016\/Debug\mainfunction.obj
@@ -28,10 +28,9 @@
          H:\CPP_CW2016\CPP_CW2016\/Debug\Demo4Main.obj
          H:\CPP_CW2016\CPP_CW2016\/Debug\Demo4Object.obj
          H:\CPP_CW2016\CPP_CW2016\/Debug\Demo4TileManager.obj
-     1>Enemy.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
          CourseworkBase.vcxproj -> H:\CPP_CW2016\CPP_CW2016\/Debug\CourseworkBase.exe
      1>Done Building Project "H:\CPP_CW2016\CPP_CW2016\src\CourseworkBase.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:09.44
+Time Elapsed 00:00:07.35

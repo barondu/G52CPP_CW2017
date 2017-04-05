@@ -1,16 +1,16 @@
 #include "header.h"
 #include "templates.h"
 #include "Role.h"
-#include "Psybd1Engine.h"
+//#include "Psybd1Engine.h"
 #include "JPGImage.h"
 
 
-Role::Role(BaseEngine* pEngine)
-	: DisplayableObject(pEngine)
+Role::Role(BaseEngine* pEngine, Psybd1TileManager* pTileManager)
+	: DisplayableObject(pEngine), m_pTileManager(pTileManager)
 {
 	// Current and previous coordinates for the object - set them the same initially
 	m_iCurrentScreenX = m_iPreviousScreenX = 200;
-	m_iCurrentScreenY = m_iPreviousScreenY = 540;
+	m_iCurrentScreenY = m_iPreviousScreenY = 200;
 	// The object coordinate will be the top left of the object
 	m_iStartDrawPosX = -30;
 	m_iStartDrawPosY = -50;
@@ -201,14 +201,44 @@ void Role::DoUpdate(int intiCurrentTime)
 		isIdle = true;
 	}
 
-
 	m_iCurrentScreenY += m_dSpeedY;
 	if (!isGround)
-		m_dSpeedY -= m_dAccelerateY;
-
-	if (m_pTileManager->IsValidTilePosition(m_iCurrentScreenX, m_iCurrentScreenY))
 	{
+		m_dSpeedY -= m_dAccelerateY;
 	}
+	
+
+	if (m_pTileManager->IsValidTilePosition(m_iCurrentScreenX - m_iDrawWidth / 2, m_iCurrentScreenY + m_iDrawHeight / 2)
+		&& m_pTileManager->IsValidTilePosition(m_iCurrentScreenX + m_iDrawWidth / 2, m_iCurrentScreenY + m_iDrawHeight / 2))
+	{
+		int iTileX1 = m_pTileManager->GetTileXForPositionOnScreen(m_iCurrentScreenX - m_iDrawWidth / 2);
+		int iTileY1 = m_pTileManager->GetTileYForPositionOnScreen(m_iCurrentScreenY + m_iDrawHeight / 2);
+		printf("itilex1 = %d itiley1 = %d\n",iTileX1,iTileY1);
+		int iCurrentTile1 = m_pTileManager->GetValue(iTileX1, iTileY1);
+		int iTileX2 = m_pTileManager->GetTileXForPositionOnScreen(m_iCurrentScreenX + m_iDrawWidth / 2);
+		int iTileY2 = m_pTileManager->GetTileYForPositionOnScreen(m_iCurrentScreenY + m_iDrawHeight / 2);
+		int iCurrentTile2 = m_pTileManager->GetValue(iTileX2, iTileY2);
+
+		if (iCurrentTile1 == 3 && iCurrentTile2 == 3)
+		{
+			isGround = false;
+
+		}
+		else
+		{ 
+			isGround = true;
+			m_dSpeedY = 0;
+			//int iTileY =
+			if ((m_iCurrentScreenY+ m_iDrawHeight / 2) > iTileY1 *60)
+			{
+				m_iCurrentScreenY = iTileY1 * 60 - m_iDrawHeight / 2;
+			}
+			//m_iCurrentScreenY = GetEngine()->GetScreenHeight() - 180 + (iTileY)*60;
+		}
+		
+	}
+
+
 
 	if (m_iCurrentScreenX < m_iDrawWidth / 2)
 		m_iCurrentScreenX = m_iDrawWidth / 2;
@@ -216,12 +246,12 @@ void Role::DoUpdate(int intiCurrentTime)
 		m_iCurrentScreenX = GetEngine()->GetScreenWidth() - m_iDrawWidth / 2;
 	if (m_iCurrentScreenY < m_iDrawHeight / 2)
 		m_iCurrentScreenY = m_iDrawHeight / 2;
-	if (m_iCurrentScreenY >= GetEngine()->GetScreenHeight() - 180 - m_iDrawHeight / 2)
+	/*if (m_iCurrentScreenY >= GetEngine()->GetScreenHeight() - 180 - m_iDrawHeight / 2)
 	{
 		isGround = true;
 		m_dSpeedY = 0;
 		m_iCurrentScreenY = GetEngine()->GetScreenHeight() - 180 - m_iDrawHeight / 2;
-	}
+	}*/
 
 
 	// Ensure that the object gets redrawn on the display, if something changed
@@ -232,14 +262,14 @@ void Role::Jump()
 {
 	if (isGround)
 	{
-		printf("jump!");
+		printf("jump\n!");
 		m_dSpeedY = -15;
 		isGround = false;
 		canDoubleJump = true;
 	}
 	else if (!isGround && canDoubleJump)
 	{
-		printf("doubleJump!/n");
+		printf("doubleJump!\n");
 		m_dSpeedY = -15;
 		canDoubleJump = false;
 	}

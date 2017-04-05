@@ -31,8 +31,8 @@ int main(int argc, char *argv[])
 	//Demo1Main oMain;
 	//Demo2Main oMain;
 	//Demo3Main oMain;
-	Demo4Main oMain;
-	//Psybd1Engine oMain;
+	//Demo4Main oMain;
+	Psybd1Engine oMain;
 
 	char buf[1024];
 	sprintf( buf, "My Demonstration Program : Size %d x %d", BASE_SCREEN_WIDTH, BASE_SCREEN_HEIGHT );
