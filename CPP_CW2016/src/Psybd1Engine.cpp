@@ -1,7 +1,7 @@
 #include "header.h"
 #include "templates.h"
 #include "Psybd1Engine.h"
-
+#include "JPGImage.h"
 
 Psybd1Engine::Psybd1Engine()
 {
@@ -14,8 +14,45 @@ Psybd1Engine::~Psybd1Engine()
 
 void Psybd1Engine::SetupBackgroundBuffer()
 {
-	FillBackground(0xe3f2fd);
-	//FillBackground(0xffffff);
+	ImageData bottomBG;
+	bottomBG.LoadImage("bottomBG.png");
+	bottomBG.RenderImage(this->GetBackground(), 0, 0, 0, 0, 1280, 720);
+
+	for (int iX = 0; iX < GetScreenWidth(); iX++)
+		for (int iY = 0; iY < this->GetScreenHeight(); iY++)
+			switch (rand() % 200000)
+		{
+			case 0: 
+				if (iX > 6 && iY > 6 && iX < GetScreenWidth() - 6 && iY < GetScreenHeight() - 6)
+				{
+					DrawBackgroundOval(iX - 5, iY - 5, iX + 5, iY + 5, 0x948ea2);
+					Redraw(true);
+				} break;
+			case 20000: 
+				if (iX > 15 && iY > 15 && iX < GetScreenWidth() - 15 && iY < GetScreenHeight()-15)
+				{
+					DrawBackgroundOval(iX - 15, iY - 15, iX + 15, iY + 15, 0x5b557f);
+					Redraw(true);
+				} break;
+		}
+	for (int iX = 0; iX < GetScreenWidth(); iX++)
+		for (int iY = 0; iY < this->GetScreenHeight(); iY++)
+			switch (rand() % 5000)
+		{
+
+			case 0:
+				if (iX > 6 && iY > 6 && iX < GetScreenWidth() - 6 && iY < GetScreenHeight() - 6)
+				{
+					SetBackgroundPixel(iX, iY, 0xFFFEB3B);
+					SetBackgroundPixel(iX, iY - 1, 0xFFF59D);
+					SetBackgroundPixel(iX, iY + 1, 0xFFF59D);
+					SetBackgroundPixel(iX - 1, iY, 0xFFF59D);
+					SetBackgroundPixel(iX + 1, iY, 0xFFF59D);
+				} break;
+		}
+
+
+	//FillBackground(0xe3f2fd);
 	int ground_Rows = 12;
 	int ground_Columns = 28;
 
@@ -29,10 +66,10 @@ void Psybd1Engine::SetupBackgroundBuffer()
 		"ddaaaddddddddddddddddddddddd",
 		"dddddddddddddddddddddddddddd",
 		"dddddddddddddddddddddddddddd",
+		"dddddddddddddddddddddddddddd",
 		"aaaaaaaaadddaaaaaaddaaaaaaaa",
 		"bbbccbbbbddbbcbcccbbcccccccc",
-		"cbccccbbcccbbbcbcccbcccccccc",
-		"cccccccccccccccccccccccccccc"
+		"cbccccbbcccbbbcbcccbcccccccc"
 		 };
 
 	// Specify how many tiles wide and high

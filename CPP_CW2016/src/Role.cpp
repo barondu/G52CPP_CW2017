@@ -15,7 +15,7 @@ Role::Role(BaseEngine* pEngine, Psybd1TileManager* pTileManager)
 	m_iStartDrawPosX = -30;
 	m_iStartDrawPosY = -50;
 	// Record the ball size as both height and width
-	m_iDrawWidth = 60;
+	m_iDrawWidth = 58;
 	m_iDrawHeight = 100;
 	// And make it visible
 
@@ -57,29 +57,29 @@ void Role::Draw()
 		// Jump sprite
 		if (m_iDir == 0)
 		{
-			if (m_dSpeedY > 8)
+			if (m_dSpeedY < -6 &&m_dSpeedY > 6)
 				m_oJumpSpriteL[0].RenderImageWithMask(GetEngine()->GetForeground(), 0, 0,
 					m_iCurrentScreenX + m_iStartDrawPosX,
 					m_iCurrentScreenY + m_iStartDrawPosY,
-					60, 100);
+					m_iDrawWidth, m_iDrawHeight);
 			else
 				m_oJumpSpriteL[1].RenderImageWithMask(GetEngine()->GetForeground(), 0, 0,
 					m_iCurrentScreenX + m_iStartDrawPosX,
 					m_iCurrentScreenY + m_iStartDrawPosY,
-					60, 100);
+					m_iDrawWidth, m_iDrawHeight);
 			}
 		else
 		{
-			if (m_dSpeedY > 8)
+			if (m_dSpeedY < -6 && m_dSpeedY > 6)
 				m_oJumpSpriteR[0].RenderImageWithMask(GetEngine()->GetForeground(), 0, 0,
 				m_iCurrentScreenX + m_iStartDrawPosX,
 				m_iCurrentScreenY + m_iStartDrawPosY,
-				60, 100);
+				m_iDrawWidth, m_iDrawHeight);
 			else
 				m_oJumpSpriteR[1].RenderImageWithMask(GetEngine()->GetForeground(), 0, 0,
 				m_iCurrentScreenX + m_iStartDrawPosX,
 				m_iCurrentScreenY + m_iStartDrawPosY,
-				60, 100);
+				m_iDrawWidth, m_iDrawHeight);
 		}
 
 	}
@@ -90,12 +90,12 @@ void Role::Draw()
 			m_oIdleSpriteL.RenderImageWithMask(GetEngine()->GetForeground(), 0, 0,
 				m_iCurrentScreenX + m_iStartDrawPosX,
 				m_iCurrentScreenY + m_iStartDrawPosY,
-				60, 100);
+				m_iDrawWidth, m_iDrawHeight);
 		else
 			m_oIdleSpriteR.RenderImageWithMask(GetEngine()->GetForeground(), 0, 0,
 				m_iCurrentScreenX + m_iStartDrawPosX,
 				m_iCurrentScreenY + m_iStartDrawPosY,
-				60, 100);
+				m_iDrawWidth, m_iDrawHeight);
 	}
 	else if (m_iDir == 0)
 	{
@@ -105,31 +105,31 @@ void Role::Draw()
 			m_oRunSpriteL[0].RenderImageWithMask(GetEngine()->GetForeground(), 0, 0,
 				m_iCurrentScreenX + m_iStartDrawPosX,
 				m_iCurrentScreenY + m_iStartDrawPosY,
-				60, 100);
+				m_iDrawWidth, m_iDrawHeight);
 			break;
 		case 1:
 			m_oRunSpriteL[1].RenderImageWithMask(GetEngine()->GetForeground(), 0, 0,
 				m_iCurrentScreenX + m_iStartDrawPosX,
 				m_iCurrentScreenY + m_iStartDrawPosY,
-				60, 100);
+				m_iDrawWidth, m_iDrawHeight);
 			break;
 		case 2:
 			m_oRunSpriteL[2].RenderImageWithMask(GetEngine()->GetForeground(), 0, 0,
 				m_iCurrentScreenX + m_iStartDrawPosX,
 				m_iCurrentScreenY + m_iStartDrawPosY,
-				60, 100);
+				m_iDrawWidth, m_iDrawHeight);
 			break;
 		case 3:
 			m_oRunSpriteL[3].RenderImageWithMask(GetEngine()->GetForeground(), 0, 0,
 				m_iCurrentScreenX + m_iStartDrawPosX,
 				m_iCurrentScreenY + m_iStartDrawPosY,
-				60, 100);
+				m_iDrawWidth, m_iDrawHeight);
 			break;
 		case 4:
 			m_oRunSpriteL[4].RenderImageWithMask(GetEngine()->GetForeground(), 0, 0,
 				m_iCurrentScreenX + m_iStartDrawPosX,
 				m_iCurrentScreenY + m_iStartDrawPosY,
-				60, 100);
+				m_iDrawWidth, m_iDrawHeight);
 			break;
 		}
 	}
@@ -141,31 +141,31 @@ void Role::Draw()
 			m_oRunSpriteR[0].RenderImageWithMask(GetEngine()->GetForeground(), 0, 0,
 				m_iCurrentScreenX + m_iStartDrawPosX,
 				m_iCurrentScreenY + m_iStartDrawPosY,
-				60, 100);
+				m_iDrawWidth, m_iDrawHeight);
 			break;
 		case 1:
 			m_oRunSpriteR[1].RenderImageWithMask(GetEngine()->GetForeground(), 0, 0,
 				m_iCurrentScreenX + m_iStartDrawPosX,
 				m_iCurrentScreenY + m_iStartDrawPosY,
-				60, 100);
+				m_iDrawWidth, m_iDrawHeight);
 			break;
 		case 2:
 			m_oRunSpriteR[2].RenderImageWithMask(GetEngine()->GetForeground(), 0, 0,
 				m_iCurrentScreenX + m_iStartDrawPosX,
 				m_iCurrentScreenY + m_iStartDrawPosY,
-				60, 100);
+				m_iDrawWidth, m_iDrawHeight);
 			break;
 		case 3:
 			m_oRunSpriteR[3].RenderImageWithMask(GetEngine()->GetForeground(), 0, 0,
 				m_iCurrentScreenX + m_iStartDrawPosX,
 				m_iCurrentScreenY + m_iStartDrawPosY,
-				60, 100);
+				m_iDrawWidth, m_iDrawHeight);
 			break;
 		case 4:
 			m_oRunSpriteR[4].RenderImageWithMask(GetEngine()->GetForeground(), 0, 0,
 				m_iCurrentScreenX + m_iStartDrawPosX,
 				m_iCurrentScreenY + m_iStartDrawPosY,
-				60, 100);
+				m_iDrawWidth, m_iDrawHeight);
 			break;
 		}
 	}
@@ -268,14 +268,14 @@ void Role::Jump()
 	if (isGround)
 	{
 		printf("jump\n!");
-		m_dSpeedY = -15;
+		m_dSpeedY = -13;
 		isGround = false;
 		canDoubleJump = true;
 	}
 	else if (!isGround && canDoubleJump)
 	{
 		printf("doubleJump!\n");
-		m_dSpeedY = -15;
+		m_dSpeedY = -13;
 		canDoubleJump = false;
 	}
 }
