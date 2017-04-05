@@ -207,22 +207,21 @@ void Role::DoUpdate(int intiCurrentTime)
 		m_dSpeedY -= m_dAccelerateY;
 	}
 	
-
-	if (m_pTileManager->IsValidTilePosition(m_iCurrentScreenX - m_iDrawWidth / 2, m_iCurrentScreenY + m_iDrawHeight / 2)
-		&& m_pTileManager->IsValidTilePosition(m_iCurrentScreenX + m_iDrawWidth / 2, m_iCurrentScreenY + m_iDrawHeight / 2))
+	// collision of ground
+	if (m_pTileManager->IsValidTilePosition(m_iCurrentScreenX - m_iDrawWidth / 2 + 7, m_iCurrentScreenY + m_iDrawHeight / 2)
+		&& m_pTileManager->IsValidTilePosition(m_iCurrentScreenX + m_iDrawWidth / 2 - 5, m_iCurrentScreenY + m_iDrawHeight / 2))
 	{
-		int iTileX1 = m_pTileManager->GetTileXForPositionOnScreen(m_iCurrentScreenX - m_iDrawWidth / 2);
+		int iTileX1 = m_pTileManager->GetTileXForPositionOnScreen(m_iCurrentScreenX - m_iDrawWidth / 2 + 7);
 		int iTileY1 = m_pTileManager->GetTileYForPositionOnScreen(m_iCurrentScreenY + m_iDrawHeight / 2);
 		printf("itilex1 = %d itiley1 = %d\n",iTileX1,iTileY1);
 		int iCurrentTile1 = m_pTileManager->GetValue(iTileX1, iTileY1);
-		int iTileX2 = m_pTileManager->GetTileXForPositionOnScreen(m_iCurrentScreenX + m_iDrawWidth / 2);
+		int iTileX2 = m_pTileManager->GetTileXForPositionOnScreen(m_iCurrentScreenX + m_iDrawWidth / 2 - 5);
 		int iTileY2 = m_pTileManager->GetTileYForPositionOnScreen(m_iCurrentScreenY + m_iDrawHeight / 2);
 		int iCurrentTile2 = m_pTileManager->GetValue(iTileX2, iTileY2);
 
 		if (iCurrentTile1 == 3 && iCurrentTile2 == 3)
 		{
 			isGround = false;
-
 		}
 		else
 		{ 
@@ -238,14 +237,20 @@ void Role::DoUpdate(int intiCurrentTime)
 		
 	}
 
-
-
 	if (m_iCurrentScreenX < m_iDrawWidth / 2)
 		m_iCurrentScreenX = m_iDrawWidth / 2;
 	if (m_iCurrentScreenX >= GetEngine()->GetScreenWidth() - m_iDrawWidth / 2)
 		m_iCurrentScreenX = GetEngine()->GetScreenWidth() - m_iDrawWidth / 2;
 	if (m_iCurrentScreenY < m_iDrawHeight / 2)
+	{
 		m_iCurrentScreenY = m_iDrawHeight / 2;
+		m_dSpeedY = 0;
+	}
+	if (m_iCurrentScreenY >= GetEngine()->GetScreenHeight() - m_iDrawHeight / 2)
+	{
+		m_dSpeedY = 0;
+		m_iCurrentScreenY = GetEngine()->GetScreenHeight() - m_iDrawHeight / 2;
+	}
 	/*if (m_iCurrentScreenY >= GetEngine()->GetScreenHeight() - 180 - m_iDrawHeight / 2)
 	{
 		isGround = true;
