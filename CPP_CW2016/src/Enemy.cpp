@@ -31,7 +31,7 @@ Enemy::~Enemy()
 
 void Enemy::Draw()
 {
-	int sprite_index = (iRefreshRate / 12) % 2;
+	int sprite_index = (iRefreshRate / 60) % 2;
 	//printf("index: %d",sprite_index);
 	switch (sprite_index)
 	{
@@ -62,29 +62,29 @@ void Enemy::DoUpdate(int intiCurrentTime)
 	// Change position if player presses a key
 	if (GetEngine()->IsKeyPressed(SDLK_w))
 	{
-		m_iCurrentScreenY -= 4;
+		m_iCurrentScreenY -= 2;
 	}
 	else if (GetEngine()->IsKeyPressed(SDLK_s))
 	{
-		m_iCurrentScreenY += 4;
+		m_iCurrentScreenY += 2;
 	}
 	else if (GetEngine()->IsKeyPressed(SDLK_a))
 	{
-		m_iCurrentScreenX -= 4;
+		m_iCurrentScreenX -= 2;
 		isRight = 0;
 	}
 	else if (GetEngine()->IsKeyPressed(SDLK_d))
 	{
-		m_iCurrentScreenX += 4;
+		m_iCurrentScreenX += 2;
 		isRight = 1;
 	}
 	else if (isRight)
 	{
-		m_iCurrentScreenX += 4;
+		m_iCurrentScreenX += 2;
 	}
 	else if (!isRight)
 	{
-		m_iCurrentScreenX -= 4;
+		m_iCurrentScreenX -= 2;
 	}
 
 
