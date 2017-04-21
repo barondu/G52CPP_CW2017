@@ -36,7 +36,7 @@ protected:
 	double m_dSpeedX = 3;
 	double m_dSpeedY = 0;
 	// Because the drop speed is positive
-	double m_dAccelerateY = -0.6;
+	double m_dAccelerateY = -0.8;
 
 	//Psybd1Engine* m_pMainEngine;
 	Psybd1TileManager* m_pTileManager;

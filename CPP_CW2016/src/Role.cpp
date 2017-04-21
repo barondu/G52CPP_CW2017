@@ -12,7 +12,7 @@ Role::Role(BaseEngine* pEngine, Psybd1TileManager* pTileManager)
 	m_iCurrentScreenX = m_iPreviousScreenX = 200;
 	m_iCurrentScreenY = m_iPreviousScreenY = 200;
 	// The object coordinate will be the top left of the object
-	m_iStartDrawPosX = -30;
+	m_iStartDrawPosX = -29;
 	m_iStartDrawPosY = -50;
 	// Record the ball size as both height and width
 	m_iDrawWidth = 58;
@@ -50,7 +50,7 @@ Role::~Role()
 
 void Role::Draw()
 {
-	int sprite_index = (iRefreshRate / 15) % 5;
+	int sprite_index = (iRefreshRate / 8) % 5;
 
 	if (!isGround)
 	{
@@ -206,18 +206,36 @@ void Role::DoUpdate(int intiCurrentTime)
 	{
 		m_dSpeedY -= m_dAccelerateY;
 	}
+	// Four corner of the role
+	int topLeft_X = m_iCurrentScreenX - m_iDrawWidth / 2 + 5;
+	int topLeft_Y = m_iCurrentScreenY - m_iDrawHeight / 2 + 5;
+
+	int topRight_X = m_iCurrentScreenX + m_iDrawWidth / 2 - 5;
+	int topRight_Y = m_iCurrentScreenY - m_iDrawHeight / 2 + 5;
+
+	int midLeft_X = m_iCurrentScreenX - m_iDrawWidth / 2 + 5;
+	int midLeft_Y = m_iCurrentScreenY;
+
+	int midRight_X = m_iCurrentScreenX + m_iDrawWidth / 2 - 5;
+	int midRight_Y = m_iCurrentScreenY;
+
+	int botLeft_X = m_iCurrentScreenX - m_iDrawWidth / 2 + 5;
+	int botLeft_Y = m_iCurrentScreenY + m_iDrawHeight / 2;
+
+	int botRight_X = m_iCurrentScreenX + m_iDrawWidth / 2 - 5;
+	int botRight_Y = m_iCurrentScreenY + m_iDrawHeight / 2;
+
 
 	
 
 	// Collision of ground
-	if (m_pTileManager->IsValidTilePosition(m_iCurrentScreenX - m_iDrawWidth / 2 + 5, m_iCurrentScreenY + m_iDrawHeight / 2)
-		&& m_pTileManager->IsValidTilePosition(m_iCurrentScreenX + m_iDrawWidth / 2 - 5, m_iCurrentScreenY + m_iDrawHeight / 2))
+	if (m_pTileManager->IsValidTilePosition(botLeft_X + 1, botLeft_Y) && m_pTileManager->IsValidTilePosition(botRight_X - 3, botRight_Y))
 	{
-		int iTileX1 = m_pTileManager->GetTileXForPositionOnScreen(m_iCurrentScreenX - m_iDrawWidth / 2 + 5);
-		int iTileY1 = m_pTileManager->GetTileYForPositionOnScreen(m_iCurrentScreenY + m_iDrawHeight / 2);
+		int iTileX1 = m_pTileManager->GetTileXForPositionOnScreen(botLeft_X + 1);
+		int iTileY1 = m_pTileManager->GetTileYForPositionOnScreen(botLeft_Y);
 		int iCurrentTile1 = m_pTileManager->GetValue(iTileX1, iTileY1);
-		int iTileX2 = m_pTileManager->GetTileXForPositionOnScreen(m_iCurrentScreenX + m_iDrawWidth / 2 - 5);
-		int iTileY2 = m_pTileManager->GetTileYForPositionOnScreen(m_iCurrentScreenY + m_iDrawHeight / 2);
+		int iTileX2 = m_pTileManager->GetTileXForPositionOnScreen(botRight_X - 3);
+		int iTileY2 = m_pTileManager->GetTileYForPositionOnScreen(botRight_Y);
 		int iCurrentTile2 = m_pTileManager->GetValue(iTileX2, iTileY2);
 		// If there is not a wall or block under the foot
 		if (iCurrentTile1 == 3 && iCurrentTile2 == 3)
@@ -226,65 +244,87 @@ void Role::DoUpdate(int intiCurrentTime)
 		{ 
 			isGround = true;
 			m_dSpeedY = 0;
-
-			if ((m_iCurrentScreenY+ m_iDrawHeight / 2) > iTileY1 *60)
-			{
+			if (iCurrentTile2 != 3 && botRight_Y > iTileY2 * 60)
+				m_iCurrentScreenY = iTileY2 * 60 - m_iDrawHeight / 2;
+			if (iCurrentTile1 != 3 && botLeft_Y > iTileY1 * 60)
 				m_iCurrentScreenY = iTileY1 * 60 - m_iDrawHeight / 2;
-			}
+			
 		}	
 	}
 
 	// Conllision of the bottom of wall
-	if (m_pTileManager->IsValidTilePosition(m_iCurrentScreenX - m_iDrawWidth / 2, m_iCurrentScreenY - m_iDrawHeight / 2)
-		&& m_pTileManager->IsValidTilePosition(m_iCurrentScreenX + m_iDrawWidth / 2, m_iCurrentScreenY - m_iDrawHeight / 2))
+	if (m_pTileManager->IsValidTilePosition(topLeft_X + 1, topLeft_Y) && m_pTileManager->IsValidTilePosition(topRight_X - 3, topRight_Y))
 	{
-		int iTileX1 = m_pTileManager->GetTileXForPositionOnScreen(m_iCurrentScreenX - m_iDrawWidth / 2);
-		int iTileY1 = m_pTileManager->GetTileYForPositionOnScreen(m_iCurrentScreenY - m_iDrawHeight / 2);
+		int iTileX1 = m_pTileManager->GetTileXForPositionOnScreen(topLeft_X + 1);
+		int iTileY1 = m_pTileManager->GetTileYForPositionOnScreen(topLeft_Y);
 		int iCurrentTile1 = m_pTileManager->GetValue(iTileX1, iTileY1);
-		int iTileX2 = m_pTileManager->GetTileXForPositionOnScreen(m_iCurrentScreenX + m_iDrawWidth / 2);
-		int iTileY2 = m_pTileManager->GetTileYForPositionOnScreen(m_iCurrentScreenY - m_iDrawHeight / 2 );
+		int iTileX2 = m_pTileManager->GetTileXForPositionOnScreen(topRight_X - 3);
+		int iTileY2 = m_pTileManager->GetTileYForPositionOnScreen(topRight_Y);
 		int iCurrentTile2 = m_pTileManager->GetValue(iTileX2, iTileY2);
 		// If there is a wall over head
-		if (iCurrentTile1 != 3 || iCurrentTile2 != 3)
-			m_dSpeedY = -m_dSpeedY;
+
+		if (iCurrentTile1 != 3)
+		{
+			m_dSpeedY = - m_dSpeedY;
+			m_iCurrentScreenY = (iTileY1 + 1) * 60 + m_iDrawHeight / 2 - 4;
+		}
+		else if (iCurrentTile2 != 3)
+		{
+			m_dSpeedY = - m_dSpeedY;
+			m_iCurrentScreenY = (iTileY2 + 1) * 60 + m_iDrawHeight / 2 - 4;
+		}
 	}
 
 	// Conllision of the flank of wall(left side of role)
-	if (m_pTileManager->IsValidTilePosition(m_iCurrentScreenX - m_iDrawWidth / 2, m_iCurrentScreenY + m_iDrawHeight / 2 - 1)
-		&& m_pTileManager->IsValidTilePosition(m_iCurrentScreenX - m_iDrawWidth / 2, m_iCurrentScreenY - m_iDrawHeight / 2 + 1)
-		&& m_pTileManager->IsValidTilePosition(m_iCurrentScreenX - m_iDrawWidth / 2, m_iCurrentScreenY))
+	if (m_pTileManager->IsValidTilePosition(topLeft_X, topLeft_Y + 1)
+		&& m_pTileManager->IsValidTilePosition(midLeft_X, midLeft_Y)
+		&& m_pTileManager->IsValidTilePosition(botLeft_X, botLeft_Y - 1))
 	{
-		int iTileX1 = m_pTileManager->GetTileXForPositionOnScreen(m_iCurrentScreenX - m_iDrawWidth / 2);
-		int iTileY1 = m_pTileManager->GetTileYForPositionOnScreen(m_iCurrentScreenY + m_iDrawHeight / 2 - 1);
+		int iTileX1 = m_pTileManager->GetTileXForPositionOnScreen(topLeft_X);
+		int iTileY1 = m_pTileManager->GetTileYForPositionOnScreen(topLeft_Y + 1);
 		int iCurrentTile1 = m_pTileManager->GetValue(iTileX1, iTileY1);
-		int iTileX2 = m_pTileManager->GetTileXForPositionOnScreen(m_iCurrentScreenX - m_iDrawWidth / 2);
-		int iTileY2 = m_pTileManager->GetTileYForPositionOnScreen(m_iCurrentScreenY - m_iDrawHeight / 2 + 1);
+		int iTileX2 = m_pTileManager->GetTileXForPositionOnScreen(midLeft_X);
+		int iTileY2 = m_pTileManager->GetTileYForPositionOnScreen(midLeft_Y);
 		int iCurrentTile2 = m_pTileManager->GetValue(iTileX2, iTileY2);
-		int iTileX3 = m_pTileManager->GetTileXForPositionOnScreen(m_iCurrentScreenX - m_iDrawWidth / 2);
-		int iTileY3 = m_pTileManager->GetTileYForPositionOnScreen(m_iCurrentScreenY);
+		int iTileX3 = m_pTileManager->GetTileXForPositionOnScreen(botLeft_X);
+		int iTileY3 = m_pTileManager->GetTileYForPositionOnScreen(botLeft_Y - 1);
 		int iCurrentTile3 = m_pTileManager->GetValue(iTileX3, iTileY3);
 		// If there is not a wall or block under the foot
 		if (iCurrentTile1 != 3 || iCurrentTile2 != 3 || iCurrentTile3 != 3)
-			m_iCurrentScreenX = (iTileX1 +1) * 60 + m_iDrawWidth / 2;
+			m_iCurrentScreenX += m_dSpeedX;
+
+		//if (iCurrentTile1 != 3)
+		//	m_iCurrentScreenX = (iTileX1 + 1) * 60 + m_iDrawWidth / 2 - 4;
+		//else if (iCurrentTile2 != 3)
+		//	m_iCurrentScreenX = (iTileX2 + 1) * 60 + m_iDrawWidth / 2 - 4;
+		//else if (iCurrentTile3 != 3)
+		//	m_iCurrentScreenX = (iTileX3 + 1) * 60 + m_iDrawWidth / 2 - 4;
 	}
 
 	// Conllision of the flank of wall(right side of role)
-	if (m_pTileManager->IsValidTilePosition(m_iCurrentScreenX + m_iDrawWidth / 2, m_iCurrentScreenY + m_iDrawHeight / 2 - 1)
-		&& m_pTileManager->IsValidTilePosition(m_iCurrentScreenX + m_iDrawWidth / 2, m_iCurrentScreenY - m_iDrawHeight / 2 + 1)
-		&& m_pTileManager->IsValidTilePosition(m_iCurrentScreenX + m_iDrawWidth / 2, m_iCurrentScreenY))
+	if (m_pTileManager->IsValidTilePosition(topRight_X, topRight_Y + 1)
+		&& m_pTileManager->IsValidTilePosition(midRight_X, midRight_Y)
+		&& m_pTileManager->IsValidTilePosition(botRight_X, botRight_Y - 1))
 	{
-		int iTileX1 = m_pTileManager->GetTileXForPositionOnScreen(m_iCurrentScreenX + m_iDrawWidth / 2);
-		int iTileY1 = m_pTileManager->GetTileYForPositionOnScreen(m_iCurrentScreenY + m_iDrawHeight / 2 - 1);
+		int iTileX1 = m_pTileManager->GetTileXForPositionOnScreen(topRight_X);
+		int iTileY1 = m_pTileManager->GetTileYForPositionOnScreen(topRight_Y + 1);
 		int iCurrentTile1 = m_pTileManager->GetValue(iTileX1, iTileY1);
-		int iTileX2 = m_pTileManager->GetTileXForPositionOnScreen(m_iCurrentScreenX + m_iDrawWidth / 2);
-		int iTileY2 = m_pTileManager->GetTileYForPositionOnScreen(m_iCurrentScreenY - m_iDrawHeight / 2 + 1);
+		int iTileX2 = m_pTileManager->GetTileXForPositionOnScreen(midRight_X);
+		int iTileY2 = m_pTileManager->GetTileYForPositionOnScreen(midRight_Y);
 		int iCurrentTile2 = m_pTileManager->GetValue(iTileX2, iTileY2);
-		int iTileX3 = m_pTileManager->GetTileXForPositionOnScreen(m_iCurrentScreenX + m_iDrawWidth / 2);
-		int iTileY3 = m_pTileManager->GetTileYForPositionOnScreen(m_iCurrentScreenY);
+		int iTileX3 = m_pTileManager->GetTileXForPositionOnScreen(botRight_X);
+		int iTileY3 = m_pTileManager->GetTileYForPositionOnScreen(botRight_Y -1);
 		int iCurrentTile3 = m_pTileManager->GetValue(iTileX3, iTileY3);
 		// If there is not a wall or block under the foot
-		if (iCurrentTile1 != 3 || iCurrentTile2 != 3 || iCurrentTile3 != 3)
-			m_iCurrentScreenX = iTileX1 * 60 - m_iDrawWidth / 2;
+		if (iCurrentTile1 != 3 || iCurrentTile2 != 3 || iCurrentTile3 != 3 )
+			m_iCurrentScreenX -= m_dSpeedX;
+
+		//if (iCurrentTile1 != 3)
+		//	m_iCurrentScreenX = iTileX1 * 60 - m_iDrawWidth / 2 + 4;
+		//else if (iCurrentTile2 != 3)
+		//	m_iCurrentScreenX = iTileX2 * 60 - m_iDrawWidth / 2 + 4;
+		//else if (iCurrentTile3 != 3)
+		//	m_iCurrentScreenX = iTileX3 * 60 - m_iDrawWidth / 2 + 4;
 	}
 
 	// Bound of screen

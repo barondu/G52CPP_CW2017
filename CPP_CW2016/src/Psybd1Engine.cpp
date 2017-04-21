@@ -57,6 +57,7 @@ void Psybd1Engine::SetupBackgroundBuffer()
 	int ground_Columns = 28;
 
 	// a--tile1.png b--tile2.png c--tile3.png
+	// d-- block and value is 3
 	char* data[] = {
 		"dddddddddddddddddddddddddddd",
 		"dddddddddddddddddddddddddddd",
@@ -197,7 +198,7 @@ void Psybd1Engine::GameAction()
 		return;
 
 	// Don't act for another 15 ticks
-	SetTimeToAct(10);
+	SetTimeToAct(15);
 
 	// Tell all objects to update themselves
 	UpdateAllObjects(GetTime());
