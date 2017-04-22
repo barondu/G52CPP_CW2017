@@ -53,7 +53,7 @@ void Psybd1Engine::SetupBackgroundBuffer()
 
 
 	//FillBackground(0xe3f2fd);
-	int ground_Rows = 12;
+	int ground_Rows = 13;
 	int ground_Columns = 28;
 
 	// a--tile1.png b--tile2.png c--tile3.png
@@ -67,10 +67,11 @@ void Psybd1Engine::SetupBackgroundBuffer()
 		"ddaaaddddddddddddddddddddddd",
 		"dddddddddddddddddddddddddddd",
 		"dddddddddddddddddddddddddddd",
-		"dddddddddddddddddddddddddddd",
 		"aaaaaaaaadddaaaaaaddaaaaaaaa",
-		"bbbccbbbbddbbcbcccbbcccccccc",
-		"cbccccbbcccbbbcbcccbcccccccc"
+		"aaaaaaaaadddaaaaaaddaaaaaaaa",
+		"bbbccbbbbdddbcbcccbbcccccccc",
+		"cbccccbbcccbbbcbcccbcccccccc",
+		"cccccccccccccccccccccccccccc"
 		 };
 
 	// Specify how many tiles wide and high
@@ -150,14 +151,16 @@ int Psybd1Engine::InitialiseObjects()
 	DestroyOldObjects();
 	// Creates an array to store the objects
 	// Needs to have room for the NULL at the end
-	CreateObjectArray(3);
+	CreateObjectArray(5);
 	// You MUST set the array entry after the last one that you create to NULL, so 
 	// that the system knows when to stop.
 	// i.e. The LAST entry has to be NULL. The fact that it is NULL is used in
 	//order to work out where the end of the array is.
 	StoreObjectInArray(0, protagonist);
 	StoreObjectInArray(1, enemy1);
+	//StoreObjectInArray(2, diamond);
 	StoreObjectInArray(2, NULL);
+	//StoreObjectInArray(2, NULL);
 	return 0;
 }
 

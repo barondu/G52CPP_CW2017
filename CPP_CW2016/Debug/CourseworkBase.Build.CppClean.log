@@ -1,5 +1,6 @@
 h:\cpp_cw2016\cpp_cw2016\debug\vc120.pdb
 h:\cpp_cw2016\cpp_cw2016\debug\vc120.idb
+h:\cpp_cw2016\cpp_cw2016\debug\diamond.sbr
 h:\cpp_cw2016\cpp_cw2016\debug\enemy.sbr
 h:\cpp_cw2016\cpp_cw2016\debug\mainfunction.sbr
 h:\cpp_cw2016\cpp_cw2016\debug\baseengine.sbr
@@ -8,6 +9,7 @@ h:\cpp_cw2016\cpp_cw2016\debug\fontmanager.sbr
 h:\cpp_cw2016\cpp_cw2016\debug\jpgimage.sbr
 h:\cpp_cw2016\cpp_cw2016\debug\psybd1engine.sbr
 h:\cpp_cw2016\cpp_cw2016\debug\psybd1tilemanager.sbr
+h:\cpp_cw2016\cpp_cw2016\debug\rewardobject.sbr
 h:\cpp_cw2016\cpp_cw2016\debug\role.sbr
 h:\cpp_cw2016\cpp_cw2016\debug\simpledemo.sbr
 h:\cpp_cw2016\cpp_cw2016\debug\tilemanager.sbr
@@ -18,10 +20,6 @@ h:\cpp_cw2016\cpp_cw2016\debug\demo2main.sbr
 h:\cpp_cw2016\cpp_cw2016\debug\demo2object.sbr
 h:\cpp_cw2016\cpp_cw2016\debug\demo2tilemanager.sbr
 h:\cpp_cw2016\cpp_cw2016\debug\demo3main.sbr
-h:\cpp_cw2016\cpp_cw2016\debug\demo3object.sbr
-h:\cpp_cw2016\cpp_cw2016\debug\demo3objectfinished.sbr
-h:\cpp_cw2016\cpp_cw2016\debug\demo3objectfinished.obj
-h:\cpp_cw2016\cpp_cw2016\debug\demo3object.obj
 h:\cpp_cw2016\cpp_cw2016\debug\demo3main.obj
 h:\cpp_cw2016\cpp_cw2016\debug\demo2tilemanager.obj
 h:\cpp_cw2016\cpp_cw2016\debug\demo2object.obj
@@ -32,6 +30,7 @@ h:\cpp_cw2016\cpp_cw2016\debug\bouncingball.obj
 h:\cpp_cw2016\cpp_cw2016\debug\tilemanager.obj
 h:\cpp_cw2016\cpp_cw2016\debug\simpledemo.obj
 h:\cpp_cw2016\cpp_cw2016\debug\role.obj
+h:\cpp_cw2016\cpp_cw2016\debug\rewardobject.obj
 h:\cpp_cw2016\cpp_cw2016\debug\psybd1tilemanager.obj
 h:\cpp_cw2016\cpp_cw2016\debug\psybd1engine.obj
 h:\cpp_cw2016\cpp_cw2016\debug\jpgimage.obj
@@ -40,6 +39,9 @@ h:\cpp_cw2016\cpp_cw2016\debug\displayableobject.obj
 h:\cpp_cw2016\cpp_cw2016\debug\baseengine.obj
 h:\cpp_cw2016\cpp_cw2016\debug\mainfunction.obj
 h:\cpp_cw2016\cpp_cw2016\debug\enemy.obj
+h:\cpp_cw2016\cpp_cw2016\debug\diamond.obj
+h:\cpp_cw2016\cpp_cw2016\debug\demo3object.sbr
+h:\cpp_cw2016\cpp_cw2016\debug\demo3objectfinished.sbr
 h:\cpp_cw2016\cpp_cw2016\debug\demo3tilemanager.sbr
 h:\cpp_cw2016\cpp_cw2016\debug\demo4main.sbr
 h:\cpp_cw2016\cpp_cw2016\debug\demo4object.sbr
@@ -48,6 +50,8 @@ h:\cpp_cw2016\cpp_cw2016\debug\demo4tilemanager.obj
 h:\cpp_cw2016\cpp_cw2016\debug\demo4object.obj
 h:\cpp_cw2016\cpp_cw2016\debug\demo4main.obj
 h:\cpp_cw2016\cpp_cw2016\debug\demo3tilemanager.obj
+h:\cpp_cw2016\cpp_cw2016\debug\demo3objectfinished.obj
+h:\cpp_cw2016\cpp_cw2016\debug\demo3object.obj
 h:\cpp_cw2016\cpp_cw2016\debug\courseworkbase.ilk
 h:\cpp_cw2016\cpp_cw2016\debug\courseworkbase.exe
 h:\cpp_cw2016\cpp_cw2016\src\map
@@ -57,6 +61,7 @@ h:\cpp_cw2016\cpp_cw2016\/debug\courseworkbase.pdb
 h:\cpp_cw2016\cpp_cw2016\/debug\courseworkbase.exe
 h:\cpp_cw2016\cpp_cw2016\/debug\courseworkbase.bsc
 h:\cpp_cw2016\cpp_cw2016\/debug\courseworkbase.ilk
+h:\cpp_cw2016\cpp_cw2016\debug\courseworkbase.tlog\cl.read.1.tlog
 h:\cpp_cw2016\cpp_cw2016\debug\courseworkbase.tlog\cl.write.1.tlog
 h:\cpp_cw2016\cpp_cw2016\debug\courseworkbase.tlog\cl.command.1.tlog
 h:\cpp_cw2016\cpp_cw2016\debug\courseworkbase.tlog\link.read.1.tlog
@@ -64,5 +69,4 @@ h:\cpp_cw2016\cpp_cw2016\debug\courseworkbase.tlog\link.write.1.tlog
 h:\cpp_cw2016\cpp_cw2016\debug\courseworkbase.tlog\link.command.1.tlog
 h:\cpp_cw2016\cpp_cw2016\debug\courseworkbase.tlog\bscmake.read.1.tlog
 h:\cpp_cw2016\cpp_cw2016\debug\courseworkbase.tlog\bscmake.write.1.tlog
-h:\cpp_cw2016\cpp_cw2016\debug\courseworkbase.tlog\cl.read.1.tlog
 h:\cpp_cw2016\cpp_cw2016\debug\courseworkbase.tlog\bscmake.command.1.tlog

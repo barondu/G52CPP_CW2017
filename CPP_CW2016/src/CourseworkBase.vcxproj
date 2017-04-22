@@ -88,6 +88,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Diamond.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="header.h" />
     <ClInclude Include="BaseEngine.h" />
@@ -97,6 +98,7 @@
     <ClInclude Include="MovementPosition.h" />
     <ClInclude Include="Psybd1Engine.h" />
     <ClInclude Include="Psybd1TileManager.h" />
+    <ClInclude Include="RewardObject.h" />
     <ClInclude Include="Role.h" />
     <ClInclude Include="templates.h" />
     <ClInclude Include="TileManager.h" />
@@ -116,6 +118,7 @@
     <ClInclude Include="SimpleDemo.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Diamond.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="mainfunction.cpp" />
     <ClCompile Include="BaseEngine.cpp" />
@@ -124,6 +127,7 @@
     <ClCompile Include="JPGImage.cpp" />
     <ClCompile Include="Psybd1Engine.cpp" />
     <ClCompile Include="Psybd1TileManager.cpp" />
+    <ClCompile Include="RewardObject.cpp" />
     <ClCompile Include="Role.cpp" />
     <ClCompile Include="SimpleDemo.cpp" />
     <ClCompile Include="TileManager.cpp" />

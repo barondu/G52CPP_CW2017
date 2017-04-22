@@ -4,6 +4,7 @@
 #include "Psybd1TileManager.h"
 #include "Role.h"
 #include "Enemy.h"
+#include "Diamond.h"
 
 class Psybd1Engine :
 	public BaseEngine
@@ -35,5 +36,6 @@ private:
 	Psybd1TileManager* m_oTiles = new Psybd1TileManager();
 	Role* protagonist = new Role(this, m_oTiles);
 	Enemy* enemy1 = new Enemy(this);
+	Diamond* diamond = new Diamond(this, m_oTiles, protagonist, 500, 200);
 };
 
